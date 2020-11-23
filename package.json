@@ -1,0 +1,49 @@
+{
+	"name": "regex-join",
+	"version": "0.0.0",
+	"description": "Merge multiple regexes and strings into one, preserving all the flags, automatically escaping the strings",
+	"keywords": [
+		"join",
+		"concat",
+		"union",
+		"merge",
+		"regular",
+		"expressions",
+		"string",
+		"concatenate",
+		"regexp",
+		"regex",
+		"escape"
+	],
+	"repository": "fregante/regex-join",
+	"license": "MIT",
+	"types": "./index.d.ts",
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"scripts": {
+		"build": "tsc",
+		"prepack": "tsc --sourceMap false",
+		"test": "tsc && xo && ava",
+		"watch": "run-p --silent watch:*",
+		"watch:build": "tsc --watch",
+		"watch:test": "ava --watch"
+	},
+	"xo": {
+		"rules": {
+			"no-useless-escape": "off",
+			"unicorn/better-regex": "off"
+		}
+	},
+	"dependencies": {
+		"escape-string-regexp": "^4.0.0"
+	},
+	"devDependencies": {
+		"@sindresorhus/tsconfig": "^0.8.0",
+		"ava": "^3.13.0",
+		"npm-run-all": "^4.1.5",
+		"typescript": "^4.1.2",
+		"xo": "^0.35.0"
+	}
+}
