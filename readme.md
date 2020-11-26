@@ -21,8 +21,9 @@ regexJoin(/\s*\(/, getNumber(), /\)$/g);
 // => /\s*\(1234\)$/g
 
 // Specify parts of a regex without making them unreadable with escapes
+const someDomain = 'api.github.com';
 regexJoin(/^/, 'https://', someDomain, /$/);
-// => /^https:\/\/github.com$/
+// => /^https:\/\/api\.github\.com$/
 
 // Split long regexes into multiple lines with comments
 regexJoin(
