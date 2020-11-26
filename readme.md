@@ -11,20 +11,26 @@
 npm install regex-join
 ```
 
-```js
-const regexJoin = require('regex-join');
-```
-
 ## Usage
 
 ```js
-regexJoin(/^beginning/g, / (.+) end/);
-// => /^beginning (.+) end/g
-```
+const regexJoin = require('regex-join');
 
-```js
-regexJoin('My (last) name is ', /(\w+)/g);
-// => /My \(last\) name is (\w+)/g
+// Place a dynamic string inside a regex
+regexJoin(/\s*\(/, getNumber(), /\)$/g);
+// => /\s*\(1234\)$/g
+
+// Specify parts of a regex without making them unreadable with escapes
+regexJoin(/^/, 'https://', someDomain, /$/);
+// => /^https:\/\/github.com$/
+
+// Split long regexes into multiple lines with comments
+regexJoin(
+	/^https?:\/\//, // Protocol
+	/[^/]+/, // Hostname
+	/[^?]+/ // Pathname
+);
+// => /^https?:\/\/[^/]+[^?]+/
 ```
 
 ## API
