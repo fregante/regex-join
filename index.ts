@@ -1,6 +1,8 @@
 import escapeStringRegexp from 'escape-string-regexp';
 
-export default function regexJoin(...expressions: Array<RegExp | string>): RegExp {
+export default function regexJoin(
+	...expressions: Array<RegExp | string>
+): RegExp {
 	const flags = [];
 	const source = [];
 	for (const part of expressions) {
