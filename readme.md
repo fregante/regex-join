@@ -14,7 +14,7 @@ npm install regex-join
 ## Usage
 
 ```js
-const regexJoin = require('regex-join');
+import regexJoin from 'regex-join';
 
 // Place a dynamic string inside a regex
 regexJoin(/\s*\(/, getNumber(), /\)$/g);
@@ -46,7 +46,11 @@ Type: `RegExp | string`
 
 ## Related
 
-- [one-event](https://github.com/fregante/one-event) - Micro module to add an event listener to be executed only once.
+- [delegate-it](https://github.com/fregante/delegate-it) - DOM event delegation, in <1KB.
 - [select-dom](https://github.com/fregante/select-dom) - Lightweight `querySelector`/`All` wrapper that outputs an Array.
 - [doma](https://github.com/fregante/doma) - Parse an HTML string into `DocumentFragment` or one `Element`, in a few bytes.
-- [Refined GitHub](https://github.com/sindresorhus/refined-github) - Uses this module.
+- [Refined GitHub](https://github.com/refined-github/refined-github) - Uses this module.
+
+## License
+
+MIT © [Federico Brigante](https://fregante.com)

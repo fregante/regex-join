@@ -16,8 +16,10 @@
 		"escape"
 	],
 	"repository": "fregante/regex-join",
+	"funding": "https://github.com/sponsors/fregante",
 	"license": "MIT",
-	"types": "./index.d.ts",
+	"type": "module",
+	"main": "index.js",
 	"files": [
 		"index.js",
 		"index.d.ts"
@@ -26,7 +28,7 @@
 		"build": "tsc",
 		"prepack": "tsc --sourceMap false",
 		"test": "tsc && xo && ava",
-		"watch": "run-p --silent watch:*",
+		"watch": "run-s --silent watch:*",
 		"watch:build": "tsc --watch",
 		"watch:test": "ava --watch"
 	},
@@ -37,13 +39,13 @@
 		}
 	},
 	"dependencies": {
-		"escape-string-regexp": "^4.0.0"
+		"escape-string-regexp": "^5.0.0"
 	},
 	"devDependencies": {
-		"@sindresorhus/tsconfig": "^0.8.0",
-		"ava": "^3.13.0",
+		"@sindresorhus/tsconfig": "^3.0.1",
+		"ava": "^4.3.3",
 		"npm-run-all": "^4.1.5",
-		"typescript": "^4.1.2",
-		"xo": "^0.35.0"
+		"typescript": "^4.8.3",
+		"xo": "^0.52.3"
 	}
 }
