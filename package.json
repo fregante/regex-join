@@ -1,6 +1,6 @@
 {
 	"name": "regex-join",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Merge multiple regexes and strings into one, preserving all the flags, automatically escaping the strings",
 	"keywords": [
 		"join",
