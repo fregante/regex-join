@@ -1,5 +1,5 @@
 import test from 'ava';
-import regexJoin from './index.js';
+import regexJoin, {regexJoinWithSeparator} from './index.js';
 
 function macro(t, input, expected) {
 	t.deepEqual(regexJoin(...input), expected);
@@ -70,3 +70,9 @@ test(
 	['My (last) name is ', /(\w+)/g],
 	/My \(last\) name is (\w+)/g,
 );
+
+test('regexJoinWithSeparator', t => {
+	t.deepEqual(regexJoinWithSeparator('|', ['a', 'b']), /a|b/);
+	t.deepEqual(regexJoinWithSeparator('|', [/a/, 'b']), /a|b/);
+	t.deepEqual(regexJoinWithSeparator('|', ['a', /b/]), /a|b/);
+});

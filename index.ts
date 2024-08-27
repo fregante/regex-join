@@ -3,6 +3,13 @@ import escapeStringRegexp from 'escape-string-regexp';
 export default function regexJoin(
 	...expressions: Array<RegExp | string>
 ): RegExp {
+	return regexJoinWithSeparator('', expressions);
+}
+
+export function regexJoinWithSeparator(
+	separator: string,
+	expressions: Array<RegExp | string>,
+): RegExp {
 	const flags = [];
 	const source = [];
 	for (const part of expressions) {
@@ -14,5 +21,5 @@ export default function regexJoin(
 		}
 	}
 
-	return new RegExp(source.join(''), [...new Set(flags)].join(''));
+	return new RegExp(source.join(separator), [...new Set(flags)].join(''));
 }
