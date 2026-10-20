@@ -6,6 +6,10 @@ export default function regexJoin(
 	return regexJoinWithSeparator('', expressions);
 }
 
+export function anyRegex(...expressions: Array<RegExp | string>): RegExp {
+	return regexJoinWithSeparator('|', expressions);
+}
+
 export function regexJoinWithSeparator(
 	separator: string,
 	expressions: Array<RegExp | string>,

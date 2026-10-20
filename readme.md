@@ -14,7 +14,7 @@ npm install regex-join
 ## Usage
 
 ```js
-import regexJoin, {regexJoinWithSeparator} from 'regex-join';
+import regexJoin, {anyRegex, regexJoinWithSeparator} from 'regex-join';
 
 // Place a dynamic string inside a regex
 regexJoin(/\s*\(/, getNumber(), /\)$/g);
@@ -32,6 +32,10 @@ regexJoin(
 	/[^?]+/ // Pathname
 );
 // => /^https?:\/\/[^/]+[^?]+/
+
+// Match any of several patterns
+anyRegex(/cat/, /dog/);
+// => /cat|dog/
 ```
 
 ## API
@@ -47,6 +51,10 @@ Type: `RegExp | string`
 ### regexJoinWithSeparator(separator, parts)
 
 Same as `regexJoin`, but allows you to specify a separator between the parts. Note that `parts` is an array.
+
+### anyRegex(part, part[, part,...])
+
+Merges any number of `RegExp` or strings into one with `|` between each part.
 
 #### separator
 

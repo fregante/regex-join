@@ -1,5 +1,5 @@
 import test from 'ava';
-import regexJoin, {regexJoinWithSeparator} from './index.js';
+import regexJoin, {anyRegex, regexJoinWithSeparator} from './index.js';
 
 function macro(t, input, expected) {
 	t.deepEqual(regexJoin(...input), expected);
@@ -75,4 +75,9 @@ test('regexJoinWithSeparator', t => {
 	t.deepEqual(regexJoinWithSeparator('|', ['a', 'b']), /a|b/);
 	t.deepEqual(regexJoinWithSeparator('|', [/a/, 'b']), /a|b/);
 	t.deepEqual(regexJoinWithSeparator('|', ['a', /b/]), /a|b/);
+});
+
+test('anyRegex', t => {
+	t.deepEqual(anyRegex(/a/, /b/), /a|b/);
+	t.deepEqual(anyRegex(/a/i, 'b'), /a|b/i);
 });
